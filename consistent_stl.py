@@ -18,8 +18,6 @@ gmsh.model.mesh.createGeometry()
 gmsh.model.mesh.set_size(gmsh.model.getEntities(0), len_scale)
 gmsh.model.mesh.generate(2)
 
-gmsh.fltk.run()
-
 gmsh.write(output)
 
 gmsh.clear()
