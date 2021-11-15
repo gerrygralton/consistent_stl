@@ -15,5 +15,5 @@ Inside a REPL run:
 
 ```
 include("consistent_stl.jl")
-constistent_stl(path/to/input_file, path/to/output_file, len_scale=1.)
+constistent_stl(path/to/input_file, path/to/output_file, len_scale=1., angle=180.)
 ```
