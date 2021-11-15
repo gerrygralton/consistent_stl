@@ -9,6 +9,9 @@ parser.add_argument("output", metavar="output", type=str,
                     help="Output path")
 parser.add_argument("length", metavar="length", type=float,
                     help="Characteristic length mesh")
+parser.add_argument("angle", metavar="angle", type=float,
+                    help="""Angle at which new surface is defined in degrees.
+                    If geometry is smooth, use 180, else use 45.""")
 
 args = parser.parse_args()
 
@@ -19,7 +22,7 @@ gmsh.option.setNumber("General.NumThreads", 4)
 
 gmsh.merge(args.input)
 
-angle = math.pi * 0.3
+angle = args.angle * math.pi / 180
 gmsh.model.mesh.createTopology()
 gmsh.model.mesh.classifySurfaces(angle, True, True)
 gmsh.model.mesh.createGeometry()
