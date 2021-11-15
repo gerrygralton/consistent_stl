@@ -1,12 +1,12 @@
 using gmsh
 
-function consistent_stl(input::String, output::String; len_scale::Real=1.)
+function consistent_stl(input::String, output::String; len_scale::Real=1., angle::Real=180.)
     gmsh.initialize()
     gmsh.clear()
 
     gmsh.merge(input)
 
-    angle = pi*0.3
+    angle = angle * pi / 180
     gmsh.model.mesh.createTopology()
     gmsh.model.mesh.classifySurfaces(angle, true, true)
     gmsh.model.mesh.createGeometry()
