@@ -6,7 +6,9 @@
 ## Python
 From the terminal run:
 
-`python3 consistent_stl.py path/to/input_file path/to/output_file length_scale`
+`python3 consistent_stl.py path/to/input_file path/to/output_file length_scale angle`
+
+where length_scale is the desired element size and angle is the angle at which new surfaces are defined in degrees. For smooth geometries use 180 degrees, else use 45 degrees. 
 
 ## Julia
 Inside a REPL run:
